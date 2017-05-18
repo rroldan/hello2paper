@@ -1,5 +1,21 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+{{#paper-sidenav-container class="site-nav-container"}}
+  {{#paper-sidenav class="md-whiteframe-z2 site-sidenav" lockedOpen="gt-sm"
+    open=isSidenavOpen onToggle=(action (mut isSidenavOpen))}}
+    {{#paper-toolbar class="site-content-toolbar" tall=true}}
+    <div class="md-toolbar-tools">
+      <img src="ember-logo.png" height="50">&nbsp;&nbsp;<strong>Paper</strong>
+    </div>
+    {{/paper-toolbar}}
+    {{#paper-content}}
+      {{#paper-list}}
+      {{#paper-item class="layout-column layout-align-start-start" onClick=(transition-to "home")}}
+            {{paper-icon icon="home" size="lg"}}
+              Home
+          {{/paper-item}}
+    {{/paper-list}}
+    {{/paper-content}}
+  {{/paper-sidenav}}
+      <div class="flex layout-column" tabindex="-1" role="main">
+        {{outlet}}
+      </div>
+{{/paper-sidenav-container}}
