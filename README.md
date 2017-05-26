@@ -7,3 +7,4 @@
 ## Configuration
 * ember install ember-paper
 * ember install ember-transition-helper
+* ember install ember install ember-cli-cordova
